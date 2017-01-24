@@ -29,7 +29,20 @@ class FlashedServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ($this->app->runningInConsole()) {
+            $this->publishFlashedResources();
+        }
+    }
+    /**
+     * Publish the Flashed resources files.
+     *
+     * @return void
+     */
+    protected function publishFlashedResources()
+    {
+        $this->publishes([
+            __DIR__ . '/../config/' => config_path()
+        ], 'flashed-it');
     }
 
     /**
@@ -49,6 +62,6 @@ class FlashedServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['gocanto-flashed'];
+        return ['flashed-it'];
     }
 }
