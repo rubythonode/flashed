@@ -43,6 +43,10 @@ class FlashedServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/' => config_path()
         ], 'flashed-it');
+
+         $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/flashedit'),
+        ], 'flashed-it');
     }
 
     /**

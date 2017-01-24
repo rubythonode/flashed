@@ -11,13 +11,17 @@
 
 namespace Gocanto\Flashed\Makeups;
 
-use Lang;
 use RuntimeException;
 use Illuminate\Support\Collection;
 use Illuminate\Container\Container;
 
 class Config
 {
+	public static function driver()
+	{
+		return self::fetch('driver');
+	}
+
 	/**
 	 * Returns the driver make up styles.
 	 *
@@ -25,13 +29,13 @@ class Config
 	 */
 	public static function driverMakeup() : Collection
 	{
-		$driver = self::fetch('driver');
+		$makeup = self::fetch('makeup');
 
-		if (empty($driver['makeup'])) {
+		if (empty($makeup)) {
 			throw new RuntimeException("The driver makeup is not valid or allowed." . PHP_EOL);
 		}
 
-		return Collection::make($driver['makeup']);
+		return Collection::make($makeup);
 	}
 
 	/**
@@ -41,9 +45,9 @@ class Config
 	 */
 	public static function errorTitle()
 	{
-		$title = self::fetch('errors.title');
+		$title = self::fetch('error_title');
 
-		return Lang::get(is_null($title) ? 'NotOk' : $title);
+		return \Lang::get(is_null($title) ? 'NotOk' : $title);
 	}
 
 	/**

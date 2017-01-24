@@ -31,9 +31,14 @@ class Makeup
 	 */
 	protected $driver = '';
 
+	/**
+	 * Creates a new instance.
+	 *
+	 * @return void
+	 */
 	public function __construct()
 	{
-		$this->driver = 'bootstrap';
+		$this->driver = Config::driver();
 	}
 
 	/**
