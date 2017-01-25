@@ -60,6 +60,6 @@ class Config
 	{
 		$key = trim($key) != '' ? '.' . $key : '';
 
-		return Container::getInstance()->make('config')->get('flashedit' . $key);
+		return Container::getInstance()->make('config')->get('flashed' . $key);
 	}
 }

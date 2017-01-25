@@ -47,7 +47,7 @@ class Makeup
 	 * @param  string $type
 	 * @return string|RuntimeException
 	 */
-	public static function make(string $type, $section)
+	public static function make(string $type, $section) : string
 	{
 		$makeup = new static();
 

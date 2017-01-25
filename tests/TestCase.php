@@ -33,7 +33,24 @@ abstract class TestCase extends Orchestra
      */
     protected function getEnvironmentSetUp($app)
     {
-        //
+        $app['config']->set('flashed.driver', 'bootstrap');
+        $app['config']->set('flashed.error_title', 'errors.whoops.title');
+        $app['config']->set('flashed.makeup', [
+            'panelClass' => [
+                'primary' => 'panel-primary',
+                'success' => 'panel-success',
+                'warning' => 'panel-warning',
+                'danger' => 'panel-danger',
+                'info' => 'panel-info',
+            ],
+            'icon' => [
+                'primary' => 'fa fa-check-square-o',
+                'success' => 'fa fa-check-square-o',
+                'danger' => 'fa fa-times-circle-o',
+                'info' => 'fa fa-info-circle',
+                'warning' => 'fa fa-warning',
+            ]
+        ]);
     }
 
     /**
