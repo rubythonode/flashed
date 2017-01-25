@@ -26,7 +26,7 @@ Gocanto\Flashed\FlashedServiceProvider::class,
 ***Second of all***, you will have to publish the vendor files shipped within this package. As so,
 
 ```bash
-php artisan vendor:publish --tag=flashed-it
+php artisan vendor:publish --tag=flashed
 ```
 
 
@@ -75,7 +75,7 @@ Flash::make('info')->message([
 The views included with this package can be imported like so,
 
 ```php
-@include ('vendor.flashedit.messages')
+@include ('vendor.flashedit.bootstrap')
 ```
 
 And it was created to work with the default driver which is ```twitter bootstrap```
