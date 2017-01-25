@@ -42,11 +42,11 @@ class FlashedServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/' => config_path()
-        ], 'flashed-it');
+        ], 'flashed');
 
          $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/flashedit'),
-        ], 'flashed-it');
+            __DIR__.'/../resources/views' => resource_path('views/vendor/flashed'),
+        ], 'flashed');
     }
 
     /**
@@ -66,6 +66,6 @@ class FlashedServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['flashed-it'];
+        return ['gocanto-flashed'];
     }
 }
